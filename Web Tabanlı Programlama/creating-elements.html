@@ -28,20 +28,7 @@
                             </div>
                            
                         </li>
-                        <li class="task list-group-item">
-                            <div class="form-check">
-                                <input type="checkbox"  id="2" class="form-check-input">
-                                <label for="2" class="form-check-label">Görev2</label>
-                            </div>
-                           
-                        </li>
-                        <li class="task list-group-item">
-                            <div class="form-check">
-                                <input type="checkbox"  id="3" class="form-check-input">
-                                <label for="3" class="form-check-label">Görev3</label>
-                            </div>
-                           
-                        </li>
+                      
                         
                     </ul>
 
@@ -53,23 +40,31 @@
 
     <script>
         let sonuc;
-        // ul=document.getElementById("task-list");
-        // // children, firstElementChild, lastElementChild
-        // //parentElement
-        // // nextElementSibling, previousElementSibling
+        let gorevListesi=["görev1","görev2","görev3"];
 
-        // sonuc = ul.children;
-        // sonuc = ul.children[0];
-        // sonuc=ul.firstElementChild;
-        // sonuc=ul.lastElementChild;
-        // sonuc=document.getElementById("title").parentElement; //kapsayıcı eleman
-        // sonuc=document.getElementById("title").nextElementSibling;//aynı hizada olan elemanlar arasında dolaşmak
-        // sonuc=document.getElementById("title").nextElementSibling.nextElementSibling.previousElementSibling;
+        ul=document.getElementById("task-list");
+        // let count=ul.children.length;
+        for(let index in gorevListesi){
+            let li=`
+       
+                   <li class="task list-group-item">
+                         <div class="form-check">
+                            <input type="checkbox"  id="${index+1}" class="form-check-input">
+                            <label for="${index+1}" class="form-check-label">${gorevListesi[index]}</label>
+                        </div>
+                       
+                    </li>
+               `;
+               ul.insertAdjacentHTML("beforeend",li);
+        }
+       
+         
+       
         
 
 
        
-        console.log(sonuc);
+        // console.log(sonuc);
 
     </script>
 </body>
